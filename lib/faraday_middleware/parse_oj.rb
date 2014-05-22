@@ -5,7 +5,9 @@ module FaradayMiddleware
     dependency 'oj'
     
     define_parser do |body|
-      Oj.load(body, mode: :compat) unless body.strip.empty?
+      body.gsub!(/\0/, '')
+      body.strip!
+      Oj.load(body, mode: :compat) unless body.empty?
     end
     
     VERSION = '0.3.0'
