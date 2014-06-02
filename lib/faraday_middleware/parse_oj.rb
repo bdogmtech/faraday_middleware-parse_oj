@@ -1,4 +1,4 @@
-require 'faraday_middleware/response_middleware'
+# require 'faraday_middleware/response_middleware'
 
 module FaradayMiddleware
   class ParseOj < ResponseMiddleware
